@@ -5,6 +5,7 @@ def agregarJoya(ruta,caso):
             biblioteca=json.load(file)
             match caso:
                 case 1:
+                    
                     print("""
 =========================================
       |Quilate de el diamante|
@@ -124,7 +125,8 @@ Por favor ingrese la claridad del diamante.
                             print("Por favor ingrese una eleccion valida...")
                             x=input("Presione enter para continuar.")
                         precioBQ=0
-                        if quilate==0.20 and 
+                        if quilate==0.20 and color=="d-f":
+                            pass
         print("error al agregar informacion de joya...")
         x=input ("presione en ter para continuar")
         return agregarJoya()

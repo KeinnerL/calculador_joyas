@@ -6,6 +6,7 @@ menu_inicio="""
 1.Ver el lista de joyas.
 2.agregar joya. 
 3.Modificar lista.
+4.Buscar joya
 """
 menu_agregar="""
 ==============================
@@ -17,4 +18,10 @@ menu_agregar="""
 3.Safiro
 4.Ruby
 """
-
+menu_editar="""
+==============================
+        Menu editar
+==============================
+1.Eliminar joya.
+2.Editar joya.
+"""
