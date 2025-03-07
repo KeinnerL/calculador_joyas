@@ -7,7 +7,9 @@ Este documento detalla los requerimientos funcionales para el desarrollo de un s
 #### **1. Consulta de precios de diamantes para comprar**
 - **Actor:** Comprador de anillo de compromiso
 - **Requerimiento:** El sistema debe mostrar tablas de referencia con precios de diamantes según sus características (quilates, claridad, color y talla).
-- **Funcionalidad esperada:** Mostrar tablas predefinidas con rangos de precios.
+- **Funcionalidad esperada:** Mostrar tablas predefinidas con rangos de precios. 
+**en el caso de los diamantes, la tabla de valores de referencia es la siguiente: https://www.diamantes-infos.com/diamante-bruto/precio-diamante-bruto.html#simulador-precio-diamante-bruto**
+
 
 #### **2. Almacenamiento de opciones de diamantes**
 - **Actor:** Comprador de anillo de compromiso
