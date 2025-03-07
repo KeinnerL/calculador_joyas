@@ -12,7 +12,7 @@ Este documento detalla los requerimientos funcionales para el desarrollo de un s
 
 
 #### **2. Almacenamiento de opciones de diamantes**
-- **Actor:** Comprador de anillo de compromiso
+- **Actor:** Comprador de anillo de compromiso.
 - **Requerimiento:** El usuario debe poder almacenar y visualizar opciones de diamantes con sus características y precios.
 - **Funcionalidad esperada:** Guardado de diamantes en una lista accesible.
 

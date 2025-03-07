@@ -158,20 +158,36 @@ Por favor ingrese la claridad del diamante.
                             precioBQ2=100000
                         #1.50 quilates
                         elif quilate==1.50 and color=="d-f":
-                            precioBQ1=8000
-                            precioBQ2=16000
+                            precioBQ1=10000
+                            precioBQ2=22000
                         elif quilate==1.50 and color=="g-j":
-                            precioBQ1=6500
-                            precioBQ2=13000
+                            precioBQ1=8500
+                            precioBQ2=17000
                         elif quilate==1.50 and color=="k-m":
-                            precioBQ1=4000
-                            precioBQ2=8000
+                            precioBQ1=5500
+                            precioBQ2=11000
                         elif quilate==1.50 and color=="n-z":
-                            precioBQ1=2500
-                            precioBQ2=6000
+                            precioBQ1=3500
+                            precioBQ2=8000
                         elif quilate==1.50 and color=="fan":
-                            precioBQ1=15000
-                            precioBQ2=100000
+                            precioBQ1=25000
+                            precioBQ2=250000
+                        #2.00
+                        elif quilate==2.00 and color=="d-f":
+                            precioBQ1=10000
+                            precioBQ2=22000
+                        elif quilate==2.00 and color=="g-j":
+                            precioBQ1=8500
+                            precioBQ2=17000
+                        elif quilate==2.00 and color=="k-m":
+                            precioBQ1=5500
+                            precioBQ2=11000
+                        elif quilate==2.00 and color=="n-z":
+                            precioBQ1=3500
+                            precioBQ2=8000
+                        elif quilate==2.00 and color=="fan":
+                            precioBQ1=25000
+                            precioBQ2=250000
         print("error al agregar informacion de joya...")
         sc.pausar_pantalla()
         return agregarJoya()
