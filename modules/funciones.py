@@ -1,4 +1,5 @@
 import json
+import utils.screenControlers as sc
 
 def agregarJoya(ruta,caso):
         with open (ruta,"r",encoding="utf-8") as file:
@@ -8,7 +9,7 @@ def agregarJoya(ruta,caso):
                     
                     print("""
 =========================================
-      |Quilate de el diamante|
+        |Quilate de el diamante|
 =========================================
 1.0.50 ct
 2.1.00 ct
@@ -29,10 +30,10 @@ Por favor ingrese quilate de el diamante.
                                 quilate=2.00
                             case _:
                                 print("La eleccion ingresada no existe....")
-                                x=input("Presione enter para continuar...")
+                                sc.pausar_pantalla()
                     except ValueError:
                         print("Por favor ingrese una eleccion valida...")
-                        x=input("Presione enter para continuar.")
+                        sc.pausar_pantalla()
                     quilate=input(float(""))
                     print("""
 ========================================================
@@ -60,10 +61,10 @@ Por favor ingrese la calidad del corte de el diamante.
                                 corte=0.80
                             case _:
                                 print("La eleccion ingresada no existe....")
-                                x=input("Presione enter para continuar.")
+                                sc.pausar_pantalla()
                     except ValueError:
                         print("Por favor ingrese una eleccion valida...")
-                        x=input("Presione enter para continuar.")
+                        sc.pausar_pantalla()
                     print("""
 ==========================================
                 |Color|
@@ -76,7 +77,7 @@ Por favor ingrese el color del diamante.
 5.Fantasia(Azul, Rosa, Verde, Amarillo intenso, Rojo.)                         
 """)
                     try:
-                        casoCL=input(int(""))
+                        casoCL=input(int("->"))
                         match casoCL:
                             case 1:
                                 color="d-f"
@@ -90,10 +91,10 @@ Por favor ingrese el color del diamante.
                                 color="fan"
                             case _:
                                 print("La eleccion ingresada no existe....")
-                                x=input("Presione enter para continuar.")
+                                sc.pausar_pantalla()
                     except ValueError:
                         print("Por favor ingrese una eleccion valida...")
-                        x=input("Presione enter para continuar.")
+                        sc.pausar_pantalla()
                         print("""
 ==========================================
                 |Claridad|
@@ -106,7 +107,7 @@ Por favor ingrese la claridad del diamante.
 5.I1-I3 (Inclusiones visibles a simple vista)                  
 """)
                         try:
-                            casoCla=input(int(""))
+                            casoCla=input(int("->"))
                             match casoCla:
                                 case 1:
                                     claridad=1.50
@@ -123,10 +124,10 @@ Por favor ingrese la claridad del diamante.
                                     x=input("Presione enter para continuar.")
                         except ValueError:
                             print("Por favor ingrese una eleccion valida...")
-                            x=input("Presione enter para continuar.")
+                            sc.pausar_pantalla()
                         precioBQ=0
                         if quilate==0.20 and color=="d-f":
                             pass
         print("error al agregar informacion de joya...")
-        x=input ("presione en ter para continuar")
+        sc.pausar_pantalla()
         return agregarJoya()
