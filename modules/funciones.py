@@ -106,21 +106,54 @@ Por favor ingrese la claridad del diamante.
 5.I1-I3 (Inclusiones visibles a simple vista)                  
 """)
                         try:
-                            casoCla=input(int("->"))
-                            match casoCla:
+                            caso=input(int("->"))
+                            match casoCL:
                                 case 1:
-                                    claridad=1.50
+                                    color="d-f"
                                 case 2:
-                                    claridad=1.30
+                                    color="g-j"
                                 case 3:
-                                    claridad=1.15
+                                    color="k-m"
                                 case 4:
-                                    claridad=1.00
+                                    color="n-z"
                                 case 5:
-                                    claridad=0.75
+                                    color="fan"
+                                case _:
+                                    print("La eleccion ingresada no existe....")
+                                    sc.pausar_pantalla()
+                        except ValueError:
+                            print("Por favor ingrese una eleccion valida...")
+                            sc.pausar_pantalla()
+                        print("""
+==========================================
+                |Metal|
+==========================================
+Por favor elija el metal de la joya.
+1.Oro
+2.Plata               
+""")
+                        
+                        try:
+                            casoMT=input(int("->"))
+                            match casoMT:
+                                case 1:
+                                    metal="oro"
+                                case 2:
+                                    metal="plata"
                                 case _:
                                     print("La eleccion ingresada no existe....")
                                     x=input("Presione enter para continuar.")
+                        except ValueError:
+                            print("Por favor ingrese una eleccion valida...")
+                            sc.pausar_pantalla()
+                            print("""
+==========================================
+                |Gramaje metal|
+==========================================
+Por favor ingrese el numero de gramos de el metal.           
+""")
+                        try:
+                            gramaje=input(float("->"))
                         except ValueError:
                             print("Por favor ingrese una eleccion valida...")
                             sc.pausar_pantalla()
@@ -158,20 +191,36 @@ Por favor ingrese la claridad del diamante.
                             precioBQ2=100000
                         #1.50 quilates
                         elif quilate==1.50 and color=="d-f":
-                            precioBQ1=8000
-                            precioBQ2=16000
+                            precioBQ1=10000
+                            precioBQ2=22000
                         elif quilate==1.50 and color=="g-j":
-                            precioBQ1=6500
-                            precioBQ2=13000
+                            precioBQ1=8500
+                            precioBQ2=17000
                         elif quilate==1.50 and color=="k-m":
-                            precioBQ1=4000
-                            precioBQ2=8000
+                            precioBQ1=5500
+                            precioBQ2=11000
                         elif quilate==1.50 and color=="n-z":
-                            precioBQ1=2500
-                            precioBQ2=6000
+                            precioBQ1=3500
+                            precioBQ2=8000
                         elif quilate==1.50 and color=="fan":
-                            precioBQ1=15000
-                            precioBQ2=100000
+                            precioBQ1=25000
+                            precioBQ2=250000
+                        #2.00
+                        elif quilate==2.00 and color=="d-f":
+                            precioBQ1=14000
+                            precioBQ2=35000
+                        elif quilate==2.00 and color=="g-j":
+                            precioBQ1=11000
+                            precioBQ2=25000
+                        elif quilate==2.00 and color=="k-m":
+                            precioBQ1=7000
+                            precioBQ2=16000
+                        elif quilate==2.00 and color=="n-z":
+                            precioBQ1=5000
+                            precioBQ2=12000
+                        elif quilate==2.00 and color=="fan":
+                            precioBQ1=50000
+                            precioBQ2=1000000
         print("error al agregar informacion de joya...")
         sc.pausar_pantalla()
         return agregarJoya()
