@@ -32,4 +32,4 @@ Análisis Histórico y Proyecciones
 
     Uso de control de versiones con ramas organizadas por función (Git y GitHub).
     Priorización de funcionalidades en fases de desarrollo.
-    Validación de cálculos con referencias externas (Ejemplo: Simulador de precios https://www.diamantes-infos.com/diamante-bruto/precio-diamante-bruto.html#simulador-precio-diamante-bruto).
+    Validación de cálculos con referencias externas (Ejemplo: Simulador de precios https://www.diamantes-infos.com/diamante-bruto/precio-diamante-bruto.html#simulador-precio-diamante-bruto)...
