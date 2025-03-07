@@ -34,7 +34,6 @@ Por favor ingrese quilate de el diamante.
                     except ValueError:
                         print("Por favor ingrese una eleccion valida...")
                         sc.pausar_pantalla()
-                    quilate=input(float(""))
                     print("""
 ========================================================
                 |Calidad de el corte|
@@ -47,8 +46,8 @@ Por favor ingrese la calidad del corte de el diamante.
 5.Pobre                             
 """)
                     try:
-                        casoC=input(int("->"))
-                        match casoC:
+                        casoCr=input(int("->"))
+                        match casoCr:
                             case 1:
                                 corte=1.20
                             case 2:
@@ -125,9 +124,54 @@ Por favor ingrese la claridad del diamante.
                         except ValueError:
                             print("Por favor ingrese una eleccion valida...")
                             sc.pausar_pantalla()
-                        precioBQ=0
-                        if quilate==0.20 and color=="d-f":
-                            pass
+                        #0.50 quilates
+                        if quilate==0.50 and color=="d-f":
+                            precioBQ1=5000
+                            precioBQ2=9000
+                        elif quilate==0.50 and color=="g-j":
+                            precioBQ1=4000
+                            precioBQ2=7000
+                        elif quilate==0.50 and color=="k-m":
+                            precioBQ1=2500
+                            precioBQ2=5000
+                        elif quilate==0.50 and color=="n-z":
+                            precioBQ1=1500
+                            precioBQ2=3500
+                        elif quilate==0.50 and color=="fan":
+                            precioBQ1=8000
+                            precioBQ2=50000
+                        #1.00 quilates
+                        elif quilate==1.00 and color=="d-f":
+                            precioBQ1=8000
+                            precioBQ2=16000
+                        elif quilate==1.00 and color=="g-j":
+                            precioBQ1=6500
+                            precioBQ2=13000
+                        elif quilate==1.00 and color=="k-m":
+                            precioBQ1=4000
+                            precioBQ2=8000
+                        elif quilate==1.00 and color=="n-z":
+                            precioBQ1=2500
+                            precioBQ2=6000
+                        elif quilate==1.00 and color=="fan":
+                            precioBQ1=15000
+                            precioBQ2=100000
+                        #1.50 quilates
+                        elif quilate==1.50 and color=="d-f":
+                            precioBQ1=8000
+                            precioBQ2=16000
+                        elif quilate==1.50 and color=="g-j":
+                            precioBQ1=6500
+                            precioBQ2=13000
+                        elif quilate==1.50 and color=="k-m":
+                            precioBQ1=4000
+                            precioBQ2=8000
+                        elif quilate==1.50 and color=="n-z":
+                            precioBQ1=2500
+                            precioBQ2=6000
+                        elif quilate==1.50 and color=="fan":
+                            precioBQ1=15000
+                            precioBQ2=100000
         print("error al agregar informacion de joya...")
         sc.pausar_pantalla()
         return agregarJoya()
