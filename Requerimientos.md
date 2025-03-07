@@ -8,7 +8,7 @@ Consulta y Almacenamiento de Precios
 
 Comparación y Gestión de Datos
 ✅ Exportar listas de joyas y precios en CSV o JSON(tabulate).
-✅ Eliminar, editar, mostrar, agregar y joyas de la lista.
+✅ Eliminar, editar, mostrar, agregar y ver joyas de la lista.
 2. Funcionalidades Adicionales (Mejoras Futuras)
 Análisis Histórico y Proyecciones
 
