@@ -1,4 +1,3 @@
-import tabulate
 from modules.imports import *
 
 RUTA=("./data/joyas.json")
@@ -18,8 +17,9 @@ def menu():
             case 1:
                 print(menu_agregar)
                 agregarJoya(RUTA)
+                return menu()
             case 2:
-                pass
+                ver_json(RUTA)
             case 3:
                 borrar_pantalla()
                 print(menu_editar)
