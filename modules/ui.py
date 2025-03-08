@@ -28,3 +28,11 @@ menu_editar="""
 2.Editar joya.
 3.Salir
 """
+
+menu_buscar = """
+==============================
+        Menu Buscar
+==============================
+1.Buscar Joya por ID.
+2.Salir
+"""
