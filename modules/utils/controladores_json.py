@@ -8,6 +8,9 @@ def crearJson(ruta):
             print("archivo abierto.")
     except FileNotFoundError :
         with open (ruta,"w",encoding="utf-8") as file:
-            dic={}
+            dic={"diamante":[],
+                 "esmeralda":[],
+                  "safiro":[],
+                   "ruby":[] }
             json.dump(dic,file)
             print("archivo creado.")
