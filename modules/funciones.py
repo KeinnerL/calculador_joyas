@@ -106,31 +106,43 @@ Por favor ingrese la claridad del diamante.
 5.I1-I3 (Inclusiones visibles a simple vista)                  
 """)
                         try:
-                            caso=input(int("->"))
-                            match casoCL:
+                            casoCLA=input(int("->"))
+                            match casoCLA:
                                 case 1:
-                                    color="d-f"
+                                    claridad=1.50
                                 case 2:
-                                    color="g-j"
+                                    clarida=1.30
                                 case 3:
-                                    color="k-m"
+                                    claridad=1.15
                                 case 4:
-                                    color="n-z"
+                                    clarida=1.00
                                 case 5:
-                                    color="fan"
+                                    claridad=0.75
                                 case _:
                                     print("La eleccion ingresada no existe....")
                                     sc.pausar_pantalla()
                         except ValueError:
                             print("Por favor ingrese una eleccion valida...")
                             sc.pausar_pantalla()
+                            print("""
+==========================================
+        |Cantidad de diamantes|
+==========================================
+Ingrese la cantidad de diamantes.                 
+""")
+                        try:
+                            cantidadDiamantes=input(int("->"))
+                        except ValueError:
+                            print("Por favor ingrese una eleccion valida...")
+                            sc.pausar_pantalla()    
                         print("""
 ==========================================
                 |Metal|
 ==========================================
 Por favor elija el metal de la joya.
 1.Oro
-2.Plata               
+2.Plata
+3.No posee               
 """)
                         
                         try:
@@ -140,6 +152,8 @@ Por favor elija el metal de la joya.
                                     metal="oro"
                                 case 2:
                                     metal="plata"
+                                case 3:
+                                    metal="no tiene"
                                 case _:
                                     print("La eleccion ingresada no existe....")
                                     x=input("Presione enter para continuar.")
@@ -150,7 +164,8 @@ Por favor elija el metal de la joya.
 ==========================================
                 |Gramaje metal|
 ==========================================
-Por favor ingrese el numero de gramos de el metal.           
+Por favor ingrese el numero de gramos de el metal.
+(en caso de no tener ingrese 0).         
 """)
                         try:
                             gramaje=input(float("->"))
@@ -221,6 +236,21 @@ Por favor ingrese el numero de gramos de el metal.
                         elif quilate==2.00 and color=="fan":
                             precioBQ1=50000
                             precioBQ2=1000000
+                        if metal=="oro":
+                            valormetal=93.65*gramaje
+                        elif metal=="plata" :
+                            valormetal=1.05*gramaje
+                        elif metal=="no tiene":
+                            valormetal=0
+                        valorfinalmin=(((precioBQ1*(quilate**1.5)*corte*claridad)*cantidadDiamantes)+valormetal)
+                        valorfinalmax=(((precioBQ2*(quilate**1.5)*corte*claridad)*cantidadDiamantes)+valormetal)
+                        dicDiamante={"quilate":quilate,
+                                    "corte":corte,
+                                    "color":color,
+                                    "cantidad":cantidadDiamantes,
+                                    "metal":metal,
+                                    "valorMin":valorfinalmin,
+                                    "valorMax":valorfinalmax}
         print("error al agregar informacion de joya...")
         sc.pausar_pantalla()
         return agregarJoya()
