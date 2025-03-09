@@ -23,7 +23,7 @@ def eliminarJoya():
                         del data[id]
                         print(f"El id '{id}' de la joya ha sido eliminada con éxito.")
                         sc.pausar_pantalla
-                        
+                                                
                 else:
                         print(f"El id '{id}' de la joya no se encuentra.")
                         with open(RUTA, "w", encoding="utf-8") as file:
