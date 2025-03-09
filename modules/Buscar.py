@@ -4,7 +4,7 @@ def buscar_joya(ruta, id_buscar):
     with open (ruta,"r",encoding="utf-8") as file:
         biblioteca = json.load(file)
     
-    borrar_pantalla
+    borrar_pantalla()
     print(menu_buscar)
     try:
         seleccion = int(input('Seleccione la opcion que deseas realizar'))
