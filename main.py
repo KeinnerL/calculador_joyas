@@ -15,10 +15,12 @@ def menu():
     else:
         match opcion_menu:
             case 1:
+                sc.borrar_pantalla()
                 print(menu_agregar)
                 agregarJoya(RUTA)
                 return menu()
             case 2:
+                sc.borrar_pantalla
                 ver_json(RUTA)
             case 3:
                 borrar_pantalla()

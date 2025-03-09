@@ -10,7 +10,7 @@ def crearJson(ruta):
         with open (ruta,"w",encoding="utf-8") as file:
             dic={"diamante":[],
                  "esmeralda":[],
-                  "safiro":[],
+                  "zafiro":[],
                    "ruby":[] }
             json.dump(dic,file)
             print("archivo creado.")

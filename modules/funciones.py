@@ -2,6 +2,7 @@ import json
 import modules.utils.screenControlers as sc
 from modules.agregar.diamante import *
 from modules.agregar.esmeralda  import *
+from modules.agregar.zafiro  import *
 def id_existe(biblioteca, id_buscar):
     for diamante in biblioteca["diamante"]:
         if diamante["id"] == id_buscar:
@@ -25,7 +26,8 @@ def agregarJoya(ruta):
                     sc.borrar_pantalla()
                     agregarEsmeralda()
                 case 3:
-                    pass
+                    sc.borrar_pantalla()
+                    agregarZafiro()
                 case 4:
                     pass
                 case 5:
