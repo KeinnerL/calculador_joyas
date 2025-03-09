@@ -40,5 +40,9 @@ def menu():
                         case 3:
                             print('Regresando al menu principal')
                             return menu()
+            case 4:
+                sc.borrar_pantalla
+                print(menu_buscar)
+                buscar_joya(RUTA)
 
 menu()
