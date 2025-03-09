@@ -26,6 +26,19 @@ def menu():
                 borrar_pantalla()
                 print(menu_editar)
                 try:
+                    accionEditar=int(input(""))
+                    match accionEditar:
+                        case 1:
+                            eliminarJoya(RUTA)
+                        case 2:
+                            pass
+                        case 3:
+                            return menu()
+                        case _:
+                            return menu()
+                except ValueError:
+                    print("por favor ingrese una opcion valida")
+                try:
                     option = input('Seleccione la opcion que deseas realizar')
                 except ValueError:
                     print('Apreciado Usuario, Usted se encuentra ingresando un caracter erroneo')
