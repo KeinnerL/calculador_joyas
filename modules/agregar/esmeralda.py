@@ -1,6 +1,8 @@
 import json
-import modules.utils.screenControlers as sc
+from modules.utils.screenControlers import *
+from modules.ui import *
 
+#funcion de agregar esmeralda 
 def agregarEsmeralda():
     def id_existe(biblioteca, id_buscar):
         for esmeralda in biblioteca["esmeralda"]:
@@ -8,17 +10,8 @@ def agregarEsmeralda():
                 return True
     with open ("./data/joyas.json","r",encoding="utf-8") as file:
             biblioteca=json.load(file)
-    sc.borrar_pantalla()
-    print("""
-=========================================
-        |Quilate de la esmeralda|
-=========================================
-1.0.50 ct
-2.1.00 ct
-3.1.50 ct  
-4.2.00 ct                  
-Por favor ingrese quilate de el diamante.                         
-""")
+    borrar_pantalla()
+    print(MENU_QUILATE_ESMERALDA)
     try:
         casoC=int(input("->"))
         match casoC:
@@ -31,20 +24,14 @@ Por favor ingrese quilate de el diamante.
             case 4:
                 quilate=2.00
             case _:
+                quilate=0.50
                 print("La eleccion ingresada no existe....")
+                pausar_pantalla()
     except ValueError:
         print("Por favor ingrese una eleccion valida...")
-        sc.pausar_pantalla()
-    sc.borrar_pantalla()
-    print("""
-==========================================
-                |Color|
-==========================================
-Por favor ingrese el color de la esmeralda.
-1.Verde intenso
-2.Verde medio
-3.Verde claro                       
-""")
+        pausar_pantalla()
+    borrar_pantalla()
+    print(MENU_COLOR_ESMERALDA)
     try:
         casoCL=int(input("->"))
         match casoCL:
@@ -55,19 +42,14 @@ Por favor ingrese el color de la esmeralda.
             case 3:
                 color="Verde claro"
             case _:
+                color="Verde intenso"
                 print("La eleccion ingresada no existe....")
+                pausar_pantalla()
     except ValueError:
         print("Por favor ingrese una eleccion valida...")
-        sc.pausar_pantalla()
-    sc.borrar_pantalla()
-    print("""
-==========================================
-                |Claridad|
-==========================================
-1. Alta (Muy pocas inclusiones)
-2. Media (Inclusiones visibles con lupa)
-3. Baja (Inclusiones visibles a simple vista)
-""")
+        pausar_pantalla()
+    borrar_pantalla()
+    print(MENU_CLARIDAD_ESMERALDA)
     try:
             casoCLA=int(input("->"))
             match casoCLA:
@@ -78,33 +60,21 @@ Por favor ingrese el color de la esmeralda.
                 case 3:
                     claridad=1.00
                 case _:
+                    claridad=1.50
                     print("La eleccion ingresada no existe....")
-                    sc.pausar_pantalla()
+                    pausar_pantalla()
     except ValueError:
             print("Por favor ingrese una eleccion valida...")
-            sc.pausar_pantalla()
-    sc.borrar_pantalla()
-    print("""
-==========================================
-        |Cantidad de Esmeraldas|
-==========================================
-Ingrese la cantidad de Esmeraldas.                 
-""")
+            pausar_pantalla()
+    borrar_pantalla()
+    print(MENU_CANTIDAD_ESMERALDA)
     try:
             cantidadEsmeraldas=int(input("->"))
     except ValueError:
             print("Por favor ingrese una eleccion valida...")
-            sc.pausar_pantalla()    
-    sc.borrar_pantalla()
-    print("""
-==========================================
-                |Metal|
-==========================================
-Por favor elija el metal de la joya.
-1.Oro
-2.Plata
-3.No posee               
-""")
+            pausar_pantalla()    
+    borrar_pantalla()
+    print(MENU_METAL_ESMERALDAS)
         
     try:
         casoMT=int(input("->"))
@@ -116,24 +86,19 @@ Por favor elija el metal de la joya.
             case 3:
                 metal="no tiene"
             case _:
+                metal="oro"
                 print("La eleccion ingresada no existe....")
-                x=input("Presione enter para continuar.")
+                pausar_pantalla()
     except ValueError:
         print("Por favor ingrese una eleccion valida...")
-        sc.pausar_pantalla()
-    sc.borrar_pantalla()
-    print("""
-==========================================
-            |Gramaje metal|
-==========================================
-Por favor ingrese el numero de gramos de el metal.
-(en caso de no tener ingrese 0).         
-""")
+        pausar_pantalla()
+    borrar_pantalla()
+    print(MENU_GRAMAJE_ESMERALDAS)
     try:
         gramaje=float(input("->"))
     except ValueError:
         print("Por favor ingrese una eleccion valida...")
-        sc.pausar_pantalla()
+        pausar_pantalla()
     #0.50 quilates
     if quilate==0.50 and color=="Verde intenso":
         precioBQ1=4000
@@ -174,7 +139,6 @@ Por favor ingrese el numero de gramos de el metal.
     elif quilate==2.00 and color=="Verde claro":
         precioBQ1=10000
         precioBQ2=20000
-    
     if metal=="oro":   
         valorMetal=93.65*gramaje
     elif metal=="plata" :
@@ -185,10 +149,11 @@ Por favor ingrese el numero de gramos de el metal.
     valorfinalmax=(((precioBQ2*claridad)*cantidadEsmeraldas)+valorMetal)
     while True:
         try:
-            sc.borrar_pantalla()
-            id = int(input("Por favor ingrese un ID  único: "))
+            borrar_pantalla()
+            id = int(input("Por favor ingrese un ID  único\n->"))
             if id_existe(biblioteca, id):
                 print(" Error: El ID ya existe. Intente con otro.")
+                pausar_pantalla()
             else:
                 break  
         except ValueError:
@@ -203,6 +168,6 @@ Por favor ingrese el numero de gramos de el metal.
     biblioteca["esmeralda"].append(dicEsmeralda)
     with open ("./data/joyas.json","w") as k2:
         json.dump(biblioteca,k2,indent=4)
-        sc.borrar_pantalla()
+        borrar_pantalla()
         print("Esmeralda agregada con exito.")
-        sc.pausar_pantalla
+        pausar_pantalla()

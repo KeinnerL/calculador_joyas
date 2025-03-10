@@ -1,6 +1,76 @@
 {
-    "diamante": [],
-    "esmeralda": [],
-    "zafiro": [],
-    "ruby": []
+    "diamante": [
+        {
+            "id": 21314,
+            "quilate": 1.0,
+            "corte": 1.0,
+            "color": "d-f",
+            "cantidad": 2,
+            "metal": "no tiene",
+            "valorMin": 24000,
+            "valorMax": 48000
+        },
+        {
+            "id": 123,
+            "quilate": 0.5,
+            "corte": 1.2,
+            "color": "d-f",
+            "cantidad": 1,
+            "metal": "oro",
+            "valorMin": 3275,
+            "valorMax": 5821
+        },
+        {
+            "id": 3125,
+            "quilate": 0.5,
+            "corte": 1.0,
+            "color": "g-j",
+            "cantidad": 3,
+            "metal": "plata",
+            "valorMin": 19291,
+            "valorMax": 24064
+        },
+        {
+            "id": 123313,
+            "quilate": 0.5,
+            "corte": 1.2,
+            "color": "d-f",
+            "cantidad": 123,
+            "metal": "oro",
+            "valorMin": 402902,
+            "valorMax": 716009
+        }
+    ],
+    "esmeralda": [
+        {
+            "id": 412,
+            "quilate": 0.5,
+            "color": "Verde intenso",
+            "cantidad": 123,
+            "metal": "oro",
+            "valorMin": 749518,
+            "valorMax": 1487518
+        },
+        {
+            "id": 12313231,
+            "quilate": 0.5,
+            "color": "Verde intenso",
+            "cantidad": 123,
+            "metal": "oro",
+            "valorMin": 749518,
+            "valorMax": 1487518
+        }
+    ],
+    "zafiro": [
+        {
+            "id": 2321,
+            "quilate": 0.5,
+            "tratamiento": "Tratamiento con relleno de vidrio ",
+            "color": "Azul v\u00edvido",
+            "cantidad": 1332,
+            "metal": "plata",
+            "valorMin": 1135651,
+            "valorMax": 2649852
+        }
+    ]
 }

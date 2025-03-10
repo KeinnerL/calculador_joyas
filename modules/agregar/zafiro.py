@@ -1,6 +1,8 @@
 import json
-import modules.utils.screenControlers as sc
+from modules.utils.screenControlers import *
+from modules.ui import *
 
+#funcion de agregar zafiro 
 def agregarZafiro():
     def id_existe(biblioteca, id_buscar):
         for zafiro in biblioteca["zafiro"]:
@@ -8,17 +10,8 @@ def agregarZafiro():
                 return True
     with open ("./data/joyas.json","r",encoding="utf-8") as file:
             biblioteca=json.load(file)
-    sc.borrar_pantalla()
-    print("""
-=========================================
-        |Quilate del zafiro|
-=========================================
-1.0.50 ct
-2.1.00 ct
-3.1.50 ct  
-4.2.00 ct                
-Por favor ingrese quilate de el diamante.                         
-""")
+    borrar_pantalla()
+    print(MENU_QUILATE_ZAFIRO)
     try:
         casoC=int(input("->"))
         match casoC:
@@ -31,20 +24,14 @@ Por favor ingrese quilate de el diamante.
             case 4:
                 quilate=2.00
             case _:
+                quilate=0.50
                 print("La eleccion ingresada no existe....")
+                pausar_pantalla()
     except ValueError:
         print("Por favor ingrese una eleccion valida...")
-        sc.pausar_pantalla()
-    sc.borrar_pantalla()
-    print("""
-=========================================================
-                |Factor de Tratamiento |   
-=========================================================
-Por favor ingrese el estado en que se encuentra el zafiro
-1.Sin tratamiento (naturales y certificados)
-2.Tratamiento térmico estándar
-3.Tratamiento con relleno de vidrio                          
-""")
+        pausar_pantalla()
+    borrar_pantalla()
+    print(MENU_FACTOR_TRATAMIENTO_ZAFIRO)
     try:
         casoTR=int(input("->"))
         match casoTR:
@@ -58,22 +45,15 @@ Por favor ingrese el estado en que se encuentra el zafiro
                 tratamiento=0.50
                 trat="Tratamiento con relleno de vidrio "
             case _:
+                tratamiento=2.00
+                trat="sin tratamiento"
                 print("La eleccion ingresada no existe....")
+                pausar_pantalla()
     except ValueError:
         print("Por favor ingrese una eleccion valida...")
-        sc.pausar_pantalla()
-    sc.borrar_pantalla()
-    print("""
-==========================================
-            |   Color|
-==========================================
-Por favor ingrese el color del zafiro.
-1.Azul Royal
-2.Azul vívido
-3.Azul oscuro o claro
-4.Zafiros de fantasía (rosa, amarillo, verde, etc.)
-5.Padparadscha (rosa-naranja raro)                         
-""")
+        pausar_pantalla()
+    borrar_pantalla()
+    print(MENU_COLOR_ZAFIRO)
     try:
         casoCL=int(input("->"))
         match casoCL:
@@ -93,20 +73,15 @@ Por favor ingrese el color del zafiro.
                 color=3.00
                 coloor="adparadscha"
             case _:
+                color=2.00
+                coloor="Azul Royal"
                 print("La eleccion ingresada no existe....")
+                pausar_pantalla()
     except ValueError:
         print("Por favor ingrese una eleccion valida...")
-        sc.pausar_pantalla()
-    sc.borrar_pantalla()
-    print("""
-========================================================
-                     |Claridad|
-========================================================
-Por favor ingrese la claridad del zafiro.
-1.Alta claridad (casi sin inclusiones visibles) 
-2.Media claridad (inclusiones leves visibles con lupa)
-3.Baja claridad (inclusiones visibles a simple vista)               
-""")
+        pausar_pantalla()
+    borrar_pantalla()
+    print(MENU_CLARIDAD_ZAFIRO)
     try:
             casoCLA=int(input("->"))
             match casoCLA:
@@ -117,33 +92,21 @@ Por favor ingrese la claridad del zafiro.
                 case 3:
                     claridad=0.80
                 case _:
+                    claridad=1.50
                     print("La eleccion ingresada no existe....")
-                    sc.pausar_pantalla()
+                    pausar_pantalla()
     except ValueError:
             print("Por favor ingrese una eleccion valida...")
-            sc.pausar_pantalla()
-    sc.borrar_pantalla()
-    print("""
-==========================================
-            |Cantidad de zafiros|
-==========================================
-Ingrese la cantidad de zafiros.                 
-""")
+            pausar_pantalla()
+    borrar_pantalla()
+    print(MENU_CANTIDAD_ZAFIRO)
     try:
             cantidadDiamantes=int(input("->"))
     except ValueError:
             print("Por favor ingrese una eleccion valida...")
-            sc.pausar_pantalla()    
-    sc.borrar_pantalla()
-    print("""
-==========================================
-                |Metal|
-==========================================
-Por favor elija el metal de la joya.
-1.Oro
-2.Plata
-3.No posee               
-""")
+            pausar_pantalla()    
+    borrar_pantalla()
+    print(MENU_METAL_ZAFIRO)
         
     try:
         casoMT=int(input("->"))
@@ -155,24 +118,19 @@ Por favor elija el metal de la joya.
             case 3:
                 metal="no tiene"
             case _:
+                metal="oro"
                 print("La eleccion ingresada no existe....")
-                x=input("Presione enter para continuar.")
+                pausar_pantalla()
     except ValueError:
         print("Por favor ingrese una eleccion valida...")
-        sc.pausar_pantalla()
-    sc.borrar_pantalla()
-    print("""
-==========================================
-            |Gramaje metal|
-==========================================
-Por favor ingrese el numero de gramos de el metal.
-(en caso de no tener ingrese 0).         
-""")
+        pausar_pantalla()
+    borrar_pantalla()
+    print(MENU_GRAMAJE_ZAFIRO)
     try:
         gramaje=float(input("->"))
     except ValueError:
         print("Por favor ingrese una eleccion valida...")
-        sc.pausar_pantalla()
+        pausar_pantalla()
     #0.50 quilates
     if quilate==0.50 and color==2.00:
         precioBQ1=2000
@@ -247,10 +205,11 @@ Por favor ingrese el numero de gramos de el metal.
     valorfinalmax=(((precioBQ2*(quilate**1.4)*tratamiento*claridad)*cantidadDiamantes)+valormetal)
     while True:
         try:
-            sc.borrar_pantalla()
-            id = int(input("Por favor ingrese un ID  único: "))
+            borrar_pantalla()
+            id = int(input("Por favor ingrese un ID  único.\n->"))
             if id_existe(biblioteca, id):
-                print(" Error: El ID ya existe. Intente con otro.")
+                print("Error: El ID ya existe. Intente con otro.")
+                pausar_pantalla()
             else:
                 break  
         except ValueError:
@@ -266,6 +225,6 @@ Por favor ingrese el numero de gramos de el metal.
     biblioteca["zafiro"].append(dicZafiro)
     with open ("./data/joyas.json","w") as k2:
         json.dump(biblioteca,k2,indent=4)
-        sc.borrar_pantalla()
+        borrar_pantalla()
         print("zafiro agregado con exito.")
-        sc.pausar_pantalla()
+        pausar_pantalla()

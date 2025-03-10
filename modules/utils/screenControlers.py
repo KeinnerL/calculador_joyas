@@ -1,6 +1,7 @@
 from os import system
 import sys
 
+#esto sirve para agregar funciones que son diferentes en los 3 sistemas operativos 
 def borrar_pantalla():
     if sys.platform == "linux" or sys.platform == "darwin":
         system("clear")
